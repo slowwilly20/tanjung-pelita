@@ -736,6 +736,8 @@ export function createWorld(random) {
     return 0;
   }
 
+  // harmless skips the player, police and missions: the title screen runs the
+  // city (traffic, pedestrians) as a living backdrop and nothing else.
   function step(dt, input, harmless) {
     let events = 0;
     state.time += dt;

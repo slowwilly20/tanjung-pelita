@@ -70,6 +70,8 @@ export function stageShot(name, world) {
     return { screen: SCREEN_TITLE, best: 0 };
   }
   // For the mission shot, jump to mission 4 before closing the brief.
+  // The order matters: closeDialogue() below runs beginMission(), which is
+  // what spawns the pistol pickup, the guards and the boss.
   if (name === 'mission') s.missionIndex = 3;
   // Close the opening brief so the world is playable.
   world.closeDialogue();

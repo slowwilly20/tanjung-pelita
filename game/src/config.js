@@ -35,6 +35,7 @@ export const PLAYER = {
   maxHealth: 100,
 };
 
+/** Vehicle tuning. `price` is unused — stealing is always free, so it stays 0. */
 export const VEHICLES = {
   angkot: { name: 'Angkot', w: 30, h: 52, accel: 420, maxSpeed: 330, reverse: 140, turn: 2.6, color: '#f2c230', roof: '#2e9e4f', price: 0 },
   becak: { name: 'Becak', w: 26, h: 40, accel: 300, maxSpeed: 170, reverse: 80, turn: 3.2, color: '#e2583e', roof: '#f6e05e', price: 0 },

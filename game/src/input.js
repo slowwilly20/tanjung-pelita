@@ -28,6 +28,8 @@ export function createInput(target) {
     } else if (CONFIRM.has(event.code)) {
       if (!event.repeat) actions |= ACTION_CONFIRM;
     } else if (ATTACK.has(event.code)) {
+      // Space also confirms, so on a dialogue screen it advances the lines
+      // instead of queuing a punch behind them.
       if (!event.repeat) actions |= ACTION_ATTACK | ACTION_CONFIRM;
     } else if (PAUSE.has(event.code)) {
       if (!event.repeat) actions |= ACTION_PAUSE;

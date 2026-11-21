@@ -34,6 +34,7 @@ export function createRenderer(canvas) {
   let cw = 0, ch = 0, scale = 1, ox = 0, oy = 0;
 
   function resize() {
+    // Device pixels are capped at 2: beyond that the canvas only costs memory.
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     cw = window.innerWidth; ch = window.innerHeight;
     canvas.width = Math.round(cw * dpr);

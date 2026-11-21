@@ -32,6 +32,9 @@ export function createAudio() {
     osc.stop(t0 + dur + 0.02);
   }
 
+  // punch/shoot/enterCar/wanted are defined here for the combat and driving
+  // moments, but the loop only triggers click/pickup/mission/busted today —
+  // the world never calls back into audio, so these wait for a wiring pass.
   return {
     setMuted(value) { muted = !!value; },
     isMuted() { return muted; },

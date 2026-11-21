@@ -175,6 +175,8 @@ function runGame() {
       step();
       accumulator -= STEP;
     }
+    // Paused, dialogue, over and complete screens never step: drop the built-up
+    // time so resuming does not fast-forward through the missed frames.
     if (screen !== SCREEN_TITLE && screen !== SCREEN_PLAY) accumulator = 0;
     renderer.draw(world.state, screen, { best, hasSave: world.hasSave() });
   }
